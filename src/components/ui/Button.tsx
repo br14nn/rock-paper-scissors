@@ -6,8 +6,9 @@ import { cn } from "@/utils/utils";
 const ButtonVariants = cva("flex items-center justify-center w-fit h-fit", {
   variants: {
     variant: {
-      paper:
-        "w-[130px] aspect-square rounded-full transition-transform duration-150 hover:scale-110",
+      paper: "rounded-full transition-transform duration-150 hover:scale-110",
+      outline:
+        "border-2 border-header-outline rounded-md hover:bg-header-outline transition-colors duration-150",
     },
   },
   defaultVariants: {

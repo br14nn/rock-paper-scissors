@@ -20,6 +20,7 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body
+        id="body"
         className={`${barlow_semi_condensed.className} min-h-screen w-full`}
       >
         {children}

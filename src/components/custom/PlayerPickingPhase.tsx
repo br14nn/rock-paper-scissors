@@ -2,8 +2,11 @@ import Pick from "@/components/custom/Pick";
 
 const PlayerPickingPhase = () => {
   return (
-    <div className="relative mt-36 flex items-center justify-center">
-      <Pick className="-translate-x-[70%] -translate-y-[98px] bg-paper-gradient">
+    <div className="relative flex items-center justify-center">
+      <Pick
+        className="-translate-x-[70%] -translate-y-[98px] bg-paper-gradient"
+        id="paper"
+      >
         <svg
           className="h-[58px] w-[48px]"
           viewBox="0 0 48 58"
@@ -16,7 +19,10 @@ const PlayerPickingPhase = () => {
           />
         </svg>
       </Pick>
-      <Pick className="-translate-y-[98px] translate-x-[70%] bg-scissors-gradient">
+      <Pick
+        className="-translate-y-[98px] translate-x-[70%] bg-scissors-gradient"
+        id="scissors"
+      >
         <svg
           className="h-[57px] w-[51px]"
           viewBox="0 0 51 57"
@@ -29,7 +35,7 @@ const PlayerPickingPhase = () => {
           />
         </svg>
       </Pick>
-      <Pick className="translate-y-[35%] bg-rock-gradient">
+      <Pick className="translate-y-[35%] bg-rock-gradient" id="rock">
         <svg
           className="h-[47px] w-[47px]"
           viewBox="0 0 47 47"
