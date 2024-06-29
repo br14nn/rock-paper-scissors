@@ -4,7 +4,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/utils/utils";
 
 const PickVariants = cva(
-  "flex items-center justify-center aspect-square min-w-[130px] rounded-full",
+  "flex items-center justify-center aspect-square min-w-[130px] xl:w-[200px] rounded-full",
   {
     variants: {
       animation: {

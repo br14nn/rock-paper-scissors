@@ -5,7 +5,7 @@ import Scoreboard from "@/components/custom/Scoreboard";
 
 const Home = () => {
   return (
-    <main className="flex min-h-screen w-full flex-col items-center gap-32 bg-radial-gradient p-6">
+    <main className="flex min-h-screen w-full flex-col items-center gap-32 bg-radial-gradient p-6 xl:gap-40 xl:p-12">
       <Scoreboard />
       <PlayerPickingPhase />
       <OpponentPickingPhase />

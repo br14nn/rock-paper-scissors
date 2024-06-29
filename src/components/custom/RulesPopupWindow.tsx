@@ -4,6 +4,7 @@ import { useState } from "react";
 import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
 
 import RulesButton from "@/components/custom/RulesButton";
+import IconClose from "../images/IconClose";
 
 const RulesPopupWindow = () => {
   const [showRulesWindow, setShowRulesWindow] = useState<boolean>(false);
@@ -183,20 +184,7 @@ const RulesPopupWindow = () => {
                 </defs>
               </svg>
               <button onClick={handleClick}>
-                <svg
-                  className="h-[20px] w-[20px]"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    opacity="0.25"
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M16.8882 0L19 2.11078L11.6108 9.5L19 16.8892L16.8892 18.999L9.5 11.6108L2.11078 19L0 16.8882L7.38922 9.49901L0 2.11078L2.11078 0L9.5 7.38922L16.8892 0H16.8882Z"
-                    fill="#3B4262"
-                  />
-                </svg>
+                <IconClose />
               </button>
             </m.div>
           )}
