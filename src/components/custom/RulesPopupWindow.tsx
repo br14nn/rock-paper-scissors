@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
 
-import Button from "@/components/ui/Button";
+import RulesButton from "@/components/custom/RulesButton";
 
 const RulesPopupWindow = () => {
   const [showRulesWindow, setShowRulesWindow] = useState<boolean>(false);
 
-  const handleToggleRulesWindow = () => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     setShowRulesWindow(!showRulesWindow);
 
     if (showRulesWindow) {
@@ -20,13 +20,7 @@ const RulesPopupWindow = () => {
 
   return (
     <>
-      <Button
-        className="mt-auto min-w-[120px] py-1 text-sm tracking-widest text-white"
-        variant={"outline"}
-        onClick={handleToggleRulesWindow}
-      >
-        RULES
-      </Button>
+      <RulesButton onClick={handleClick} />
       <LazyMotion features={domAnimation}>
         <AnimatePresence>
           {showRulesWindow && (
@@ -188,7 +182,7 @@ const RulesPopupWindow = () => {
                   </linearGradient>
                 </defs>
               </svg>
-              <button onClick={handleToggleRulesWindow}>
+              <button onClick={handleClick}>
                 <svg
                   className="h-[20px] w-[20px]"
                   viewBox="0 0 20 20"

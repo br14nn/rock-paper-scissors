@@ -12,6 +12,7 @@ interface IGameMasterState {
   updatePhase: (phase: IGameMasterState["phase"]) => void;
   updatePlayerPick: (pick: IGameMasterState["playerPick"]) => void;
   updateOpponentPick: (pick: IGameMasterState["opponentPick"]) => void;
+  playAgain: () => void;
 }
 
 const useGameMasterStore = create<IGameMasterState>()(
@@ -23,6 +24,12 @@ const useGameMasterStore = create<IGameMasterState>()(
     updatePhase: (phase) => set(() => ({ phase: phase })),
     updatePlayerPick: (pick) => set(() => ({ playerPick: pick })),
     updateOpponentPick: (pick) => set(() => ({ opponentPick: pick })),
+    playAgain: () =>
+      set(() => ({
+        phase: "playerPickingPhase",
+        playerPick: undefined,
+        opponentPick: undefined,
+      })),
   })),
 );
 

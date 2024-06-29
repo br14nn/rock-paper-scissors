@@ -1,28 +1,43 @@
-import { twMerge } from "tailwind-merge";
+import { forwardRef, ReactNode } from "react";
+import { cva, VariantProps } from "class-variance-authority";
 
-import Button from "@/components/ui/Button";
+import { cn } from "@/utils/utils";
 
-type TPickProps = {
-  children?: React.ReactNode;
-  className?: string;
-  variant?: "default" | "defaultNoAnims";
-  id?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-};
+const PickVariants = cva(
+  "flex items-center justify-center aspect-square min-w-[130px] rounded-full",
+  {
+    variants: {
+      animation: {
+        default: "transition-transform duration-150 hover:scale-110",
+        none: "",
+      },
+    },
+    defaultVariants: {
+      animation: "default",
+    },
+  },
+);
 
-const Pick = ({ children, className, variant, id, onClick }: TPickProps) => {
-  return (
-    <Button
-      className={twMerge("aspect-square min-w-[130px]", className)}
-      id={id}
-      onClick={onClick}
-      variant={variant}
-    >
-      <div className="flex aspect-square w-[75%] items-center justify-center rounded-full bg-white">
-        {children}
-      </div>
-    </Button>
-  );
-};
+interface IPickProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof PickVariants> {
+  children?: ReactNode;
+}
+
+const Pick = forwardRef<HTMLButtonElement, IPickProps>(
+  ({ children, animation, className, ...props }, ref) => {
+    return (
+      <button
+        className={cn(PickVariants({ animation, className }))}
+        ref={ref}
+        {...props}
+      >
+        <div className="flex aspect-square w-[75%] items-center justify-center rounded-full bg-white">
+          {children}
+        </div>
+      </button>
+    );
+  },
+);
 
 export default Pick;
