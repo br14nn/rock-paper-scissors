@@ -1,4 +1,10 @@
+"use client";
+
+import useGameMasterStore from "@/utils/store/gameMaster.store";
+
 const Scoreboard = () => {
+  const score = useGameMasterStore((state) => state.score);
+
   return (
     <div className="flex w-full max-w-[800px] flex-row items-center justify-between rounded-md border-2 border-header-outline p-4">
       <svg
@@ -58,7 +64,7 @@ const Scoreboard = () => {
         <p className="text-sm tracking-widest text-score-text xl:text-base">
           SCORE
         </p>
-        <p className="text-5xl text-dark-text xl:text-6xl">0</p>
+        <p className="text-5xl text-dark-text xl:text-6xl">{score}</p>
       </div>
     </div>
   );

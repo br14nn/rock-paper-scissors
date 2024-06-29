@@ -1,11 +1,16 @@
+"use client";
+
 import Button from "@/components/ui/Button";
 
 import useGameMasterStore from "@/utils/store/gameMaster.store";
 
 const PlayAgainButton = () => {
-  const playAgain = useGameMasterStore((state) => state.playAgain);
+  const { currentWinner, resetScore, playAgain } = useGameMasterStore(
+    (state) => state,
+  );
 
   const handleClick = () => {
+    if (currentWinner === "house") resetScore();
     playAgain();
   };
 

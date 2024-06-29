@@ -8,11 +8,21 @@ import PlayAgainButton from "@/components/custom/PlayAgainButton";
 import useGameMasterStore from "@/utils/store/gameMaster.store";
 
 const OpponentPickingPhase = () => {
-  const { phase, playerPick, opponentPick, updateOpponentPick } =
-    useGameMasterStore();
+  const {
+    phase,
+    playerPick,
+    opponentPick,
+    currentWinner,
+    incrementScore,
+    resetScore,
+    updateCurrentWinner,
+    updateOpponentPick,
+    updatePhase,
+  } = useGameMasterStore();
 
   useEffect(() => {
     handleOpponentPick();
+    handleWinner();
   });
 
   const handleOpponentPick = () => {
@@ -23,7 +33,31 @@ const OpponentPickingPhase = () => {
         if (randomNum === 1) updateOpponentPick("rock");
         if (randomNum === 2) updateOpponentPick("paper");
         if (randomNum === 3) updateOpponentPick("scissors");
+        updatePhase("winnerAnnouncingPhase");
       }, 2000);
+    }
+  };
+
+  const handleWinner = () => {
+    if (phase === "winnerAnnouncingPhase" && currentWinner === undefined) {
+      if (playerPick === opponentPick) {
+        return updateCurrentWinner("draw");
+      }
+
+      if (
+        (playerPick === "rock" && opponentPick === "scissors") ||
+        (playerPick === "paper" && opponentPick === "rock") ||
+        (playerPick === "scissors" && opponentPick === "paper")
+      ) {
+        incrementScore();
+        return updateCurrentWinner("player");
+      } else if (
+        (playerPick === "rock" && opponentPick === "paper") ||
+        (playerPick === "paper" && opponentPick === "scissors") ||
+        (playerPick === "scissors" && opponentPick === "rock")
+      ) {
+        return updateCurrentWinner("house");
+      }
     }
   };
 
@@ -159,11 +193,16 @@ const OpponentPickingPhase = () => {
             </p>
           </div>
         </div>
-        {/* {phase === "winnerAnnouncingPhase" && } */}
-        <div className="flex flex-col items-center gap-4">
-          <p className="text-5xl font-bold tracking-wide text-white">YOU WIN</p>
-          <PlayAgainButton />
-        </div>
+        {phase === "winnerAnnouncingPhase" && (
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-5xl font-bold tracking-wide text-white">
+              {currentWinner === "player" && "YOU WIN"}
+              {currentWinner === "house" && "YOU LOSE"}
+              {currentWinner === "draw" && "DRAW"}
+            </p>
+            <PlayAgainButton />
+          </div>
+        )}
       </>
     );
   }

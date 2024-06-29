@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      minHeight: {
+        screen: "100svh",
+      },
       screens: {
         sm: "640px",
         // => @media (min-width: 640px) { ... }
