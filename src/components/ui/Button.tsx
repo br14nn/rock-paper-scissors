@@ -6,13 +6,14 @@ import { cn } from "@/utils/utils";
 const ButtonVariants = cva("flex items-center justify-center w-fit h-fit", {
   variants: {
     variant: {
-      paper: "rounded-full transition-transform duration-150 hover:scale-110",
+      default: "rounded-full transition-transform duration-150 hover:scale-110",
+      defaultNoAnims: "rounded-full hover:cursor-default",
       outline:
         "border-2 border-header-outline rounded-md hover:bg-header-outline transition-colors duration-150",
     },
   },
   defaultVariants: {
-    variant: "paper",
+    variant: "default",
   },
 });
 
