@@ -31,11 +31,11 @@ const RulesPopupWindow = () => {
           {showRulesWindow && (
             <>
               <div
-                className="fixed inset-0 hidden h-screen w-screen bg-black/40 xl:block"
+                className="fixed inset-0 z-[998] hidden h-screen w-screen bg-black/40 xl:block"
                 onClick={handleClick}
               />
               <m.div
-                className="fixed inset-0 m-auto flex min-h-screen w-full flex-col items-center justify-center gap-28 bg-white p-8 xl:h-fit xl:min-h-0 xl:w-fit xl:gap-14 xl:rounded-md"
+                className="fixed inset-0 z-[999] m-auto flex min-h-screen w-full flex-col items-center justify-center gap-28 bg-white p-8 xl:h-fit xl:min-h-0 xl:w-fit xl:gap-14 xl:rounded-md"
                 initial={{ opacity: 0, y: "100%" }}
                 animate={{ opacity: 1, y: "0" }}
                 exit={{ opacity: 0, y: "100%" }}
