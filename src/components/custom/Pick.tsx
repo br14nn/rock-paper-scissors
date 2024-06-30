@@ -25,7 +25,7 @@ interface IPickProps
 }
 
 const Pick = forwardRef<HTMLButtonElement, IPickProps>(
-  ({ children, animation, className, ...props }, ref) => {
+  ({ children = "pick", animation, className, ...props }, ref) => {
     return (
       <button
         className={cn(PickVariants({ animation, className }))}
@@ -40,4 +40,5 @@ const Pick = forwardRef<HTMLButtonElement, IPickProps>(
   },
 );
 
+Pick.displayName = "Pick";
 export default Pick;

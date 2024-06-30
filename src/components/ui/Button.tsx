@@ -22,7 +22,7 @@ interface IButtonProps
 }
 
 const Button = forwardRef<HTMLButtonElement, IButtonProps>(
-  ({ children, variant, className, ...props }, ref) => {
+  ({ children = "button", variant, className, ...props }, ref) => {
     return (
       <button
         className={cn(ButtonVariants({ variant, className }))}
@@ -35,4 +35,5 @@ const Button = forwardRef<HTMLButtonElement, IButtonProps>(
   },
 );
 
+Button.displayName = "Button";
 export default Button;
