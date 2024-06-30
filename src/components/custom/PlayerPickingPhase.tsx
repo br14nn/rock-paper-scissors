@@ -23,21 +23,21 @@ const PlayerPickingPhase = () => {
     return (
       <div className="relative flex items-center justify-center">
         <Pick
-          className="absolute -translate-x-[70%] -translate-y-[98px] bg-paper-gradient xl:-translate-x-[75%] xl:-translate-y-[139px]"
+          className="shadow-paper-2 xl:shadow-paper absolute -translate-x-[70%] -translate-y-[98px] bg-paper-gradient xl:-translate-x-[75%] xl:-translate-y-[139px]"
           id="paper"
           onClick={handlePlayerPick}
         >
           <IconPaper />
         </Pick>
         <Pick
-          className="absolute -translate-y-[98px] translate-x-[70%] bg-scissors-gradient xl:-translate-y-[139px] xl:translate-x-[75%]"
+          className="shadow-scissors-2 xl:shadow-scissors absolute -translate-y-[98px] translate-x-[70%] bg-scissors-gradient xl:-translate-y-[139px] xl:translate-x-[75%]"
           id="scissors"
           onClick={handlePlayerPick}
         >
           <IconScissors />
         </Pick>
         <Pick
-          className="absolute translate-y-[35%] bg-rock-gradient xl:translate-y-[45%]"
+          className="shadow-rock-2 xl:shadow-rock absolute translate-y-[35%] bg-rock-gradient xl:translate-y-[45%]"
           id="rock"
           onClick={handlePlayerPick}
         >

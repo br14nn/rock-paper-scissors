@@ -32,7 +32,7 @@ const Pick = forwardRef<HTMLButtonElement, IPickProps>(
         ref={ref}
         {...props}
       >
-        <div className="flex aspect-square w-[75%] items-center justify-center rounded-full bg-white">
+        <div className="flex aspect-square w-[75%] items-center justify-center rounded-full bg-white shadow-[inset_0px_6px_#BABFD3] xl:shadow-[inset_0px_8px_#BABFD3]">
           {children}
         </div>
       </button>

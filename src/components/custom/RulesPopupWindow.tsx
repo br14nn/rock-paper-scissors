@@ -31,7 +31,7 @@ const RulesPopupWindow = () => {
           {showRulesWindow && (
             <>
               <div
-                className="fixed inset-0 hidden h-screen w-screen bg-black/20 xl:block"
+                className="fixed inset-0 hidden h-screen w-screen bg-black/40 xl:block"
                 onClick={handleClick}
               />
               <m.div

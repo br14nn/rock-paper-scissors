@@ -11,6 +11,14 @@ const config: Config = {
       minHeight: {
         screen: "100svh",
       },
+      boxShadow: {
+        paper: "0px 8px #2945C2",
+        "paper-2": "0px 6px #2945C2",
+        scissors: "0px 8px #C76C1D",
+        "scissors-2": "0px 6px #C76C1D",
+        rock: "0px 8px #9F1536",
+        "rock-2": "0px 6px #9F1536",
+      },
       screens: {
         sm: "640px",
         // => @media (min-width: 640px) { ... }

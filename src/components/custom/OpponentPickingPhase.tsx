@@ -66,11 +66,11 @@ const OpponentPickingPhase = () => {
   if (phase === "opponentPickingPhase" || phase === "winnerAnnouncingPhase") {
     return (
       <>
-        <div className="flex flex-row items-center justify-center gap-12 xl:gap-32">
+        <div className="relative flex flex-row items-center justify-center gap-12 xl:gap-32">
           <div className="flex flex-col items-center gap-6 xl:flex-col-reverse xl:gap-12">
             {playerPick === "rock" && (
               <Pick
-                className="cursor-default bg-rock-gradient xl:w-[300px]"
+                className="shadow-rock cursor-default bg-rock-gradient xl:w-[300px]"
                 animation="none"
                 id="rock"
               >
@@ -79,7 +79,7 @@ const OpponentPickingPhase = () => {
             )}
             {playerPick === "paper" && (
               <Pick
-                className="cursor-default bg-paper-gradient xl:w-[300px]"
+                className="shadow-paper cursor-default bg-paper-gradient xl:w-[300px]"
                 animation="none"
                 id="paper"
               >
@@ -88,7 +88,7 @@ const OpponentPickingPhase = () => {
             )}
             {playerPick === "scissors" && (
               <Pick
-                className="cursor-default bg-scissors-gradient xl:w-[300px]"
+                className="shadow-scissors cursor-default bg-scissors-gradient xl:w-[300px]"
                 animation="none"
                 id="scissors"
               >
@@ -106,7 +106,7 @@ const OpponentPickingPhase = () => {
             )}
             {opponentPick === "rock" && (
               <Pick
-                className="cursor-default bg-rock-gradient xl:w-[300px]"
+                className="shadow-rock cursor-default bg-rock-gradient xl:w-[300px]"
                 animation="none"
                 id="rock"
               >
@@ -115,7 +115,7 @@ const OpponentPickingPhase = () => {
             )}
             {opponentPick === "paper" && (
               <Pick
-                className="cursor-default bg-paper-gradient xl:w-[300px]"
+                className="shadow-paper cursor-default bg-paper-gradient xl:w-[300px]"
                 animation="none"
                 id="paper"
               >
@@ -124,7 +124,7 @@ const OpponentPickingPhase = () => {
             )}
             {opponentPick === "scissors" && (
               <Pick
-                className="cursor-default bg-scissors-gradient xl:w-[300px]"
+                className="shadow-scissors cursor-default bg-scissors-gradient xl:w-[300px]"
                 animation="none"
                 id="scissors"
               >
