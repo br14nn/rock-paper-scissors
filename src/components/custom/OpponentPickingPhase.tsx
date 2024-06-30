@@ -68,9 +68,12 @@ const OpponentPickingPhase = () => {
       <>
         <div className="relative flex flex-row items-center justify-center gap-12 xl:gap-32">
           <div className="flex flex-col items-center gap-6 xl:flex-col-reverse xl:gap-12">
+            {currentWinner === "player" && (
+              <div className="shadow-multiple xl:shadow-multiple-md absolute z-0 aspect-square w-[130px] rounded-full xl:w-[300px]" />
+            )}
             {playerPick === "rock" && (
               <Pick
-                className="shadow-rock cursor-default bg-rock-gradient xl:w-[300px]"
+                className="shadow-rock-2 xl:shadow-rock relative z-10 cursor-default bg-rock-gradient xl:w-[300px]"
                 animation="none"
                 id="rock"
               >
@@ -79,7 +82,7 @@ const OpponentPickingPhase = () => {
             )}
             {playerPick === "paper" && (
               <Pick
-                className="shadow-paper cursor-default bg-paper-gradient xl:w-[300px]"
+                className="shadow-paper-2 xl:shadow-paper relative z-10 cursor-default bg-paper-gradient xl:w-[300px]"
                 animation="none"
                 id="paper"
               >
@@ -88,7 +91,7 @@ const OpponentPickingPhase = () => {
             )}
             {playerPick === "scissors" && (
               <Pick
-                className="shadow-scissors cursor-default bg-scissors-gradient xl:w-[300px]"
+                className="shadow-scissors-2 xl:shadow-scissors relative z-10 cursor-default bg-scissors-gradient xl:w-[300px]"
                 animation="none"
                 id="scissors"
               >
@@ -104,9 +107,12 @@ const OpponentPickingPhase = () => {
             {opponentPick === undefined && (
               <div className="aspect-square w-[130px] rounded-full bg-black/20 xl:w-[300px]" />
             )}
+            {currentWinner === "house" && (
+              <div className="shadow-multiple xl:shadow-multiple-md absolute z-0 aspect-square w-[130px] rounded-full xl:w-[300px]" />
+            )}
             {opponentPick === "rock" && (
               <Pick
-                className="shadow-rock cursor-default bg-rock-gradient xl:w-[300px]"
+                className="shadow-rock-2 xl:shadow-rock relative z-10 cursor-default bg-rock-gradient xl:w-[300px]"
                 animation="none"
                 id="rock"
               >
@@ -115,7 +121,7 @@ const OpponentPickingPhase = () => {
             )}
             {opponentPick === "paper" && (
               <Pick
-                className="shadow-paper cursor-default bg-paper-gradient xl:w-[300px]"
+                className="shadow-paper-2 xl:shadow-paper relative z-10 cursor-default bg-paper-gradient xl:w-[300px]"
                 animation="none"
                 id="paper"
               >
@@ -124,7 +130,7 @@ const OpponentPickingPhase = () => {
             )}
             {opponentPick === "scissors" && (
               <Pick
-                className="shadow-scissors cursor-default bg-scissors-gradient xl:w-[300px]"
+                className="shadow-scissors-2 xl:shadow-scissors relative z-10 cursor-default bg-scissors-gradient xl:w-[300px]"
                 animation="none"
                 id="scissors"
               >

@@ -18,6 +18,10 @@ const config: Config = {
         "scissors-2": "0px 6px #C76C1D",
         rock: "0px 8px #9F1536",
         "rock-2": "0px 6px #9F1536",
+        multiple:
+          "0px 0px 0px 20px rgba(255,255,255,0.15), 0px 0px 0px 60px rgba(255,255,255,0.10), 0px 0px 0px 100px rgba(255,255,255,0.05)",
+        "multiple-md":
+          "0px 0px 0px 50px rgba(255,255,255,0.15), 0px 0px 0px 120px rgba(255,255,255,0.10), 0px 0px 0px 210px rgba(255,255,255,0.05)",
       },
       screens: {
         sm: "640px",
