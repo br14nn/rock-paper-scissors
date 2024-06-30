@@ -1,14 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
-
-import Pick from "@/components/custom/Pick";
-import PlayAgainButton from "@/components/custom/PlayAgainButton";
-
-import useGameMasterStore from "@/utils/store/gameMaster.store";
+import Pick from "./Pick";
+import PlayAgainButton from "./PlayAgainButton";
+import WinnerAnnouncer from "./WinnerAnnouncer";
 import IconRock from "../images/IconRock";
 import IconPaper from "../images/IconPaper";
 import IconScissors from "../images/IconScissors";
+import useGameMasterStore from "@/utils/store/gameMaster.store";
 
 const OpponentPickingPhase = () => {
   const {
@@ -67,7 +66,7 @@ const OpponentPickingPhase = () => {
   if (phase === "opponentPickingPhase" || phase === "winnerAnnouncingPhase") {
     return (
       <>
-        <div className="flex flex-row justify-center gap-12 xl:gap-32">
+        <div className="flex flex-row items-center justify-center gap-12 xl:gap-32">
           <div className="flex flex-col items-center gap-6 xl:flex-col-reverse xl:gap-12">
             {playerPick === "rock" && (
               <Pick
@@ -75,7 +74,7 @@ const OpponentPickingPhase = () => {
                 animation="none"
                 id="rock"
               >
-                <IconRock />
+                <IconRock className="xl:w-[100px]" />
               </Pick>
             )}
             {playerPick === "paper" && (
@@ -84,7 +83,7 @@ const OpponentPickingPhase = () => {
                 animation="none"
                 id="paper"
               >
-                <IconPaper />
+                <IconPaper className="xl:w-[100px]" />
               </Pick>
             )}
             {playerPick === "scissors" && (
@@ -93,13 +92,14 @@ const OpponentPickingPhase = () => {
                 animation="none"
                 id="scissors"
               >
-                <IconScissors />
+                <IconScissors className="xl:w-[100px]" />
               </Pick>
             )}
             <p className="text-sm font-medium tracking-widest text-white xl:text-xl">
               YOU PICKED
             </p>
           </div>
+          <WinnerAnnouncer className="hidden xl:flex" />
           <div className="flex flex-col items-center gap-6 xl:flex-col-reverse xl:gap-12">
             {opponentPick === undefined && (
               <div className="aspect-square w-[130px] rounded-full bg-black/20 xl:w-[300px]" />
@@ -110,7 +110,7 @@ const OpponentPickingPhase = () => {
                 animation="none"
                 id="rock"
               >
-                <IconRock />
+                <IconRock className="xl:w-[100px]" />
               </Pick>
             )}
             {opponentPick === "paper" && (
@@ -119,7 +119,7 @@ const OpponentPickingPhase = () => {
                 animation="none"
                 id="paper"
               >
-                <IconPaper />
+                <IconPaper className="xl:w-[100px]" />
               </Pick>
             )}
             {opponentPick === "scissors" && (
@@ -128,7 +128,7 @@ const OpponentPickingPhase = () => {
                 animation="none"
                 id="scissors"
               >
-                <IconScissors />
+                <IconScissors className="xl:w-[100px]" />
               </Pick>
             )}
             <p className="text-sm font-medium tracking-widest text-white xl:text-xl">
@@ -136,16 +136,7 @@ const OpponentPickingPhase = () => {
             </p>
           </div>
         </div>
-        {phase === "winnerAnnouncingPhase" && (
-          <div className="flex flex-col items-center gap-4 xl:hidden">
-            <p className="text-5xl font-bold tracking-wide text-white">
-              {currentWinner === "player" && "YOU WIN"}
-              {currentWinner === "house" && "YOU LOSE"}
-              {currentWinner === "draw" && "DRAW"}
-            </p>
-            <PlayAgainButton />
-          </div>
-        )}
+        <WinnerAnnouncer />
       </>
     );
   }

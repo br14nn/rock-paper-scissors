@@ -16,7 +16,7 @@ const PlayAgainButton = () => {
 
   return (
     <Button
-      className="min-w-[180px] text-dark-text transition-colors duration-150 hover:text-red-500"
+      className="min-w-full tracking-widest text-dark-text transition-colors duration-150 hover:text-red-500"
       onClick={handleClick}
     >
       PLAY AGAIN
